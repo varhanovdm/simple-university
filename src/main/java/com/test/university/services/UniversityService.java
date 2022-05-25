@@ -1,11 +1,13 @@
 package com.test.university.services;
 
 public interface UniversityService {
-    void showDepartmentHead(String departmentName);
+    void showDepartmentHeadIfExists(String departmentName);
 
-    void showDepartmentStatistic(String departmentName);
+    void showDepartmentStatisticIfExists(String departmentName);
 
-    void showAverageSalary(String departmentName);
+    void showAverageSalaryIfExists(String departmentName);
 
-    void showCountOfEmployee(String departmentName);
+    void showCountOfEmployeeIfExists(String departmentName);
+
+    void globalSearch(String template);
 }

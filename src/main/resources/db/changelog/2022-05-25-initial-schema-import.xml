@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="25.05.2022-create_department_table" author="Dmytro Varhanov">
+        <createTable tableName="department">
+            <column name="id" autoIncrement="true" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="text"/>
+            <column name="lector_id" type="bigint"/>
+        </createTable>
+        <insert tableName="department">
+            <column name="id" value="1"/>
+            <column name="name" value="Marketing"/>
+            <column name="lector_id" value="1"/>
+        </insert>
+        <insert tableName="department">
+            <column name="id" value="2"/>
+            <column name="name" value="Finance"/>
+            <column name="lector_id" value="3"/>
+        </insert>
+    </changeSet>
+    <changeSet id="25.05.2022-create_lector_table" author="Dmytro Varhanov">
+        <createTable tableName="lector">
+            <column name="id" autoIncrement="true" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="degree" type="text"/>
+            <column name="first_name" type="text"/>
+            <column name="last_name" type="text"/>
+            <column name="salary" type="int"/>
+        </createTable>
+        <insert tableName="lector">
+            <column name="id" value="1"/>
+            <column name="degree" value="PROFESSOR"/>
+            <column name="first_name" value="Rick"/>
+            <column name="last_name" value="Novak"/>
+            <column name="salary" value="1880"/>
+        </insert>
+        <insert tableName="lector">
+            <column name="id" value="2"/>
+            <column name="degree" value="ASSISTANT"/>
+            <column name="first_name" value="Jake"/>
+            <column name="last_name" value="Taylor"/>
+            <column name="salary" value="1200"/>
+        </insert>
+        <insert tableName="lector">
+            <column name="id" value="3"/>
+            <column name="degree" value="PROFESSOR"/>
+            <column name="first_name" value="Nick"/>
+            <column name="last_name" value="Brown"/>
+            <column name="salary" value="1880"/>
+        </insert>
+        <insert tableName="lector">
+            <column name="id" value="4"/>
+            <column name="degree" value="ASSOCIATE_PROFESSOR"/>
+            <column name="first_name" value="Jake"/>
+            <column name="last_name" value="Thomas"/>
+            <column name="salary" value="1450"/>
+        </insert>
+        <insert tableName="lector">
+            <column name="id" value="5"/>
+            <column name="degree" value="ASSISTANT"/>
+            <column name="first_name" value="Robert"/>
+            <column name="last_name" value="Wilson"/>
+            <column name="salary" value="1200"/>
+        </insert>
+        <insert tableName="lector">
+            <column name="id" value="6"/>
+            <column name="degree" value="PROFESSOR"/>
+            <column name="first_name" value="Mike"/>
+            <column name="last_name" value="Johnson"/>
+            <column name="salary" value="1880"/>
+        </insert>
+        <insert tableName="lector">
+            <column name="id" value="7"/>
+            <column name="degree" value="ASSISTANT"/>
+            <column name="first_name" value="Robert"/>
+            <column name="last_name" value="Evans"/>
+            <column name="salary" value="1200"/>
+        </insert>
+        <insert tableName="lector">
+            <column name="id" value="8"/>
+            <column name="degree" value="ASSOCIATE_PROFESSOR"/>
+            <column name="first_name" value="Mike"/>
+            <column name="last_name" value="Clark"/>
+            <column name="salary" value="1450"/>
+        </insert>
+    </changeSet>
+    <changeSet id="25.05.2022-create_department_lector_table" author="Dmytro Varhanov">
+        <createTable tableName="department_lector">
+            <column name="department_id" autoIncrement="true" type="bigint"/>
+            <column name="lector_id" autoIncrement="true" type="bigint"/>
+        </createTable>
+        <insert tableName="department_lector">
+            <column name="department_id" value="1" />
+            <column name="lector_id" value="1"/>
+        </insert>
+        <insert tableName="department_lector">
+            <column name="department_id" value="1" />
+            <column name="lector_id" value="2"/>
+        </insert>
+        <insert tableName="department_lector">
+            <column name="department_id" value="1" />
+            <column name="lector_id" value="5"/>
+        </insert>
+        <insert tableName="department_lector">
+            <column name="department_id" value="1" />
+            <column name="lector_id" value="6"/>
+        </insert>
+        <insert tableName="department_lector">
+            <column name="department_id" value="1" />
+            <column name="lector_id" value="7"/>
+        </insert>
+        <insert tableName="department_lector">
+            <column name="department_id" value="2" />
+            <column name="lector_id" value="3"/>
+        </insert>
+        <insert tableName="department_lector">
+            <column name="department_id" value="2" />
+            <column name="lector_id" value="4"/>
+        </insert>
+        <insert tableName="department_lector">
+            <column name="department_id" value="2" />
+            <column name="lector_id" value="8"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

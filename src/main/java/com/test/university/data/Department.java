@@ -33,7 +33,7 @@ public class Department extends BaseEntity{
     private List<Lector> lectors = new ArrayList<>();
 
     @ManyToOne
-    @JoinColumn(name = "head_id")
+    @JoinColumn(name = "lector_id")
     private Lector headLector;
 
 }

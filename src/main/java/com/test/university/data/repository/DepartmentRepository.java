@@ -11,6 +11,8 @@ public interface DepartmentRepository extends JpaRepository<Department, Long> {
 
     Optional<Department> findByName(String departmentName);
 
+    boolean existsByName(String departmentName);
+
     @Query(value = "SELECT avg(lector.salary) FROM Department department LEFT JOIN department.lectors lector WHERE department.name = :departmentName")
     Double avgSalary(String departmentName);
 
