@@ -1,4 +1,4 @@
-# simple-university
+# Simple University
 - Simple test **Spring Boot application** with the console interface for university, which consists of departments and lectors.
 - The lectors could work in more than one department.
 - Lector could have one degree (`ASSISTANT, ASSOCIATE_PROFESSOR, PROFESSOR`).
